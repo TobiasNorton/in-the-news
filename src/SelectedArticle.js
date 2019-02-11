@@ -9,16 +9,23 @@ class SelectedArticle extends Component {
     }
   }
 
-  // componentDidMount = () => {
-  //   this.setState({
-  //     currentArticle: this.props.match.params.title
-  //   })
-  // }
+  componentDidMount = () => {
+    this.setState(
+      {
+        currentArticle: this.props.location.state
+      },
+      () => {
+        console.log(this.state.currentArticle)
+      }
+    )
+  }
 
   render() {
     return (
       <div>
-        <h1 />
+        {/* <img src={this.props.location.state.urlToImage} alt={this.state.currentArticle.title} />
+        <h1>{this.props.location.state.title}</h1>
+        <p>{this.props.location.state.description}</p> */}
       </div>
     )
   }

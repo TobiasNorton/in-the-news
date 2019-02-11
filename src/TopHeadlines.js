@@ -8,14 +8,17 @@ class TopHeadlines extends Component {
     super(props)
 
     this.state = {
-      articles: []
+      articles: [],
+      category: 'general'
     }
   }
 
   componentDidMount = () => {
     axios
       .get(
-        'https://newsapi.org/v2/top-headlines?country=us&apiKey=724c68adcd604fd7bcd865950a9eddb1'
+        `https://newsapi.org/v2/top-headlines?country=us&category=${
+          this.state.category
+        }&apiKey=724c68adcd604fd7bcd865950a9eddb1`
       )
       .then(response => {
         this.setState({
@@ -25,27 +28,118 @@ class TopHeadlines extends Component {
   }
 
   getTopHeadlines = () => {
-    console.log(this.state.articles)
     return this.state.articles.map((article, index) => {
       return (
         <div key={index} className="headline-item">
-          <Link to={`/article/${article.id}`}>{article.title}</Link>
+          <Link to={{ pathname: `/article/${encodeURI(article.title)}`, state: article }}>
+            {article.title}
+          </Link>
         </div>
       )
     })
+  }
+
+  reloadHeadlines = event => {
+    console.log(event.target.dataset.name)
+
+    this.setState(
+      {
+        category: event.target.dataset.name
+      },
+      () => {
+        axios
+          .get(
+            `https://newsapi.org/v2/top-headlines?country=us&category=${
+              this.state.category
+            }&apiKey=724c68adcd604fd7bcd865950a9eddb1`
+          )
+          .then(response => {
+            this.setState({
+              articles: response.data.articles
+            })
+          })
+      }
+    )
+  }
+
+  business = () => {
+    this.setState({
+      category: 'business'
+    })
+    this.reloadHeadlines()
+  }
+
+  entertainment = () => {
+    this.setState({
+      category: 'entertainment'
+    })
+    this.reloadHeadlines()
+  }
+
+  general = () => {
+    this.setState({
+      category: 'general'
+    })
+    this.reloadHeadlines()
+  }
+
+  health = () => {
+    this.setState({
+      category: 'health'
+    })
+    this.reloadHeadlines()
+  }
+
+  science = () => {
+    this.setState({
+      category: 'science'
+    })
+    this.reloadHeadlines()
+  }
+
+  sports = () => {
+    this.setState({
+      category: 'sports'
+    })
+    this.reloadHeadlines()
+  }
+
+  technology = () => {
+    this.setState(
+      {
+        category: 'technology'
+      },
+      () => {
+        this.reloadHeadlines()
+      }
+    )
   }
 
   render() {
     return (
       <section>
         <p>Choose a category</p>
-        <button>Business</button>
-        <button>Entertainment</button>
-        <button>General</button>
-        <button>Health</button>
-        <button>Science</button>
-        <button>Sports</button>
-        <button>Technology</button>
+        <button onClick={this.reloadHeadlines} data-name="business">
+          Business
+        </button>
+        <button onClick={this.reloadHeadlines} data-name="entertainment">
+          Entertainment
+        </button>
+        <button onClick={this.reloadHeadlines} data-name="general">
+          General
+        </button>
+        <button onClick={this.reloadHeadlines} data-name="health">
+          Health
+        </button>
+        <button onClick={this.reloadHeadlines} data-name="science">
+          Science
+        </button>
+        <button onClick={this.reloadHeadlines} data-name="sports">
+          Sports
+        </button>
+        <button onClick={this.reloadHeadlines} data-name="business">
+          Technology
+        </button>
         <div className="headlines-container">{this.getTopHeadlines()}</div>
       </section>
     )
