@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './App.css'
 
+import TopHeadlines from './TopHeadlines'
+
 // 724c68adcd604fd7bcd865950a9eddb1
 
 class App extends Component {
@@ -11,12 +13,14 @@ class App extends Component {
       <>
         <nav>
           <p>Home</p>
+          <p>Top Headlines</p>
           <form onSubmit={this.findArticles}>
             <input type="text" name="search" />
             <button>Search</button>
           </form>
         </nav>
         <h1>In the News</h1>
+        <TopHeadlines />
         <footer>
           Powered by <a href="https://newsapi.org/">NewsAPI.org</a>
         </footer>
