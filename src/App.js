@@ -19,8 +19,11 @@ class App extends Component {
             <button>Search</button>
           </form>
         </nav>
-        <h1>In the News</h1>
-        <TopHeadlines />
+        <body>
+          <h1>In the News</h1>
+          <TopHeadlines />
+        </body>
+
         <footer>
           Powered by <a href="https://newsapi.org/">NewsAPI.org</a>
         </footer>

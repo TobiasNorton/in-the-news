@@ -6,7 +6,7 @@ class TopHeadlines extends Component {
     super(props)
 
     this.state = {
-      articles: undefined
+      articles: []
     }
   }
 
@@ -16,15 +16,21 @@ class TopHeadlines extends Component {
         'https://newsapi.org/v2/top-headlines?country=us&apiKey=724c68adcd604fd7bcd865950a9eddb1'
       )
       .then(response => {
-        console.log(response.data.articles)
         this.setState({
           articles: response.data.articles
         })
       })
   }
 
+  getTopHeadlines = () => {
+    console.log(this.state.articles)
+    return this.state.articles.map((article, index) => {
+      return <p key={index}>{article.title}</p>
+    })
+  }
+
   render() {
-    return <section>{/* {this.getTopHeadlines()} */}</section>
+    return <section>{this.getTopHeadlines()}</section>
   }
 }
 
