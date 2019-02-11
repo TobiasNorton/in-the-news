@@ -15,7 +15,7 @@ class SelectedArticle extends Component {
         currentArticle: this.props.location.state
       },
       () => {
-        console.log(this.state.currentArticle)
+        console.log(this.state.currentArticle.source)
       }
     )
   }
@@ -25,9 +25,18 @@ class SelectedArticle extends Component {
       <div className="selected-article-main">
         <h1>{this.state.currentArticle.title}</h1>
         <p>by {this.state.currentArticle.author}</p>
+        <p>
+          {/* {this.state.currentArticle.source.name ? this.state.currentArticle.source.name : 'Ooops'} */}
+        </p>
         <img src={this.state.currentArticle.urlToImage} className="article-image" />
         <p>{this.state.currentArticle.description}</p>
         <p>{this.state.currentArticle.content}</p>
+        <p>
+          Read the full article at
+          <a href={this.state.currentArticle.url} target="_blank">
+            Why can I console.log the name but I can't put it here?
+          </a>
+        </p>
       </div>
     )
   }
