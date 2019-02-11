@@ -13,12 +13,15 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="master-container">
           <NavBar />
-          <Route exact path="/" component={Home} />
-          <Route path="/top_headlines/" component={TopHeadlines} />
-          {/* <Route path="/article/:id" componenet={SelectedArticle}/> */}
-          {/* <Route path="/search_results" componenet={SearchResults}/> */}
+          <main>
+            <Route exact path="/" component={Home} />
+            <Route path="/top_headlines/" component={TopHeadlines} />
+            {/* <Route path="/article/:id" componenet={SelectedArticle}/> */}
+            {/* <Route path="/search_results" componenet={SearchResults}/> */}
+          </main>
+
           <Footer />
         </div>
       </Router>
