@@ -30,7 +30,11 @@ class TopHeadlines extends Component {
   }
 
   render() {
-    return <section>{this.getTopHeadlines()}</section>
+    return (
+      <section>
+        <div className="headlines-container">{this.getTopHeadlines()}</div>
+      </section>
+    )
   }
 }
 
