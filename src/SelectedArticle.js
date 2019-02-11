@@ -5,7 +5,7 @@ class SelectedArticle extends Component {
     super(props)
 
     this.state = {
-      currentArticle: undefined
+      currentArticle: []
     }
   }
 
@@ -22,10 +22,12 @@ class SelectedArticle extends Component {
 
   render() {
     return (
-      <div>
-        {/* <img src={this.props.location.state.urlToImage} alt={this.state.currentArticle.title} />
-        <h1>{this.props.location.state.title}</h1>
-        <p>{this.props.location.state.description}</p> */}
+      <div className="selected-article-main">
+        <h1>{this.state.currentArticle.title}</h1>
+        <p>by {this.state.currentArticle.author}</p>
+        <img src={this.state.currentArticle.urlToImage} className="article-image" />
+        <p>{this.state.currentArticle.description}</p>
+        <p>{this.state.currentArticle.content}</p>
       </div>
     )
   }

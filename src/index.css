@@ -36,3 +36,11 @@ main {
 .headline-item {
   max-width: 30rem;
 }
+
+.selected-article-main {
+  max-width: 50rem;
+}
+
+.article-image {
+  max-width: 50rem;
+}
