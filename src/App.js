@@ -1,28 +1,28 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+
+// 724c68adcd604fd7bcd865950a9eddb1
 
 class App extends Component {
+  findArticles = () => {}
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+      <>
+        <nav>
+          <p>Home</p>
+          <form onSubmit={this.findArticles}>
+            <input type="text" name="search" />
+            <button>Search</button>
+          </form>
+        </nav>
+        <h1>In the News</h1>
+        <footer>
+          Powered by <a href="https://newsapi.org/">NewsAPI.org</a>
+        </footer>
+      </>
+    )
   }
 }
 
-export default App;
+export default App
