@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import NavBar from './NavBar'
-import Footer from './Footer'
+
+import { Link } from 'react-router-dom'
 
 class TopHeadlines extends Component {
   constructor(props) {
@@ -27,13 +27,25 @@ class TopHeadlines extends Component {
   getTopHeadlines = () => {
     console.log(this.state.articles)
     return this.state.articles.map((article, index) => {
-      return <p key={index}>{article.title}</p>
+      return (
+        <div key={index} className="headline-item">
+          <Link to={`/article/${article.id}`}>{article.title}</Link>
+        </div>
+      )
     })
   }
 
   render() {
     return (
       <section>
+        <p>Choose a category</p>
+        <button>Business</button>
+        <button>Entertainment</button>
+        <button>General</button>
+        <button>Health</button>
+        <button>Science</button>
+        <button>Sports</button>
+        <button>Technology</button>
         <div className="headlines-container">{this.getTopHeadlines()}</div>
       </section>
     )
