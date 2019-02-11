@@ -4,34 +4,22 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 import TopHeadlines from './TopHeadlines'
 import Home from './Home'
+import NavBar from './NavBar'
+import Footer from './Footer'
 
 // 724c68adcd604fd7bcd865950a9eddb1
 
 class App extends Component {
-  findArticles = () => {}
-
   render() {
     return (
       <Router>
         <div>
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/top_headlines">Top Headlines</Link>
-            <form onSubmit={this.findArticles}>
-              <input type="text" name="search" />
-              <button>Search</button>
-            </form>
-          </nav>
-          <body>
-            <h1>In the News</h1>
-          </body>
-
-          <footer>
-            Powered by <a href="https://newsapi.org/">NewsAPI.org</a>
-          </footer>
-
+          <NavBar />
           <Route exact path="/" component={Home} />
           <Route path="/top_headlines/" component={TopHeadlines} />
+          {/* <Route path="/article/:id" componenet={SelectedArticle}/> */}
+          {/* <Route path="/search_results" componenet={SearchResults}/> */}
+          <Footer />
         </div>
       </Router>
     )

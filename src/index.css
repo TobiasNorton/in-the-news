@@ -26,6 +26,5 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 50rem;
-  padding-left: 6rem;
-  padding-right: 6rem;
+  padding: 6rem;
 }
