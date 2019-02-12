@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
+import { parameterize } from './utility'
 import { Link } from 'react-router-dom'
 
 class TopHeadlines extends Component {
@@ -32,7 +32,7 @@ class TopHeadlines extends Component {
       return (
         <div key={index} className="headline-item">
           <Link
-            to={{ pathname: `/article/${encodeURI(article.title)}`, state: article }}
+            to={{ pathname: `/article/${parameterize(article.title)}`, state: article }}
             className="headline"
           >
             {article.title}

@@ -75,3 +75,7 @@ main {
 .article-image {
   max-width: 50rem;
 }
+
+a {
+  text-decoration: none;
+}

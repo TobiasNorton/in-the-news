@@ -1,38 +1,39 @@
 import React, { Component } from 'react'
 
 class SelectedArticle extends Component {
-  constructor(props) {
-    super(props)
+  // constructor(props) {
+  //   super(props)
 
-    this.state = {
-      currentArticle: []
-    }
-  }
+  //   this.state = {
+  //     currentArticle: []
+  //   }
+  // }
 
-  componentDidMount = () => {
-    this.setState(
-      {
-        currentArticle: this.props.location.state
-      },
-      () => {
-        console.log(this.state.currentArticle.source.name)
-        console.log(this.state.currentArticle)
-      }
-    )
-  }
+  // componentDidMount = () => {
+  //   this.setState(
+  //     {
+  //       currentArticle: this.props.location.state
+  //     },
+  //     () => {
+  //       console.log(this.state.currentArticle.source.name)
+  //       console.log(this.state.currentArticle)
+  //     }
+  //   )
+  // }
 
   render() {
+    const currentArticle = this.props.location.state
+    console.log(currentArticle)
     return (
       <div className="selected-article-main">
-        <h1>{this.state.currentArticle.title}</h1>
-        <p>by {this.state.currentArticle.author}</p>
-        <img src={this.state.currentArticle.urlToImage} className="article-image" />
-        {/* <p>{this.state.currentArticle}</p> */}
-        <p>{this.state.currentArticle.content}</p>
+        <h1>{currentArticle.title}</h1>
+        <p>by {currentArticle.author}</p>
+        <img src={currentArticle.urlToImage} className="article-image" />
+        <p>{currentArticle.content}</p>
         <p>
           Read the full article at
-          <a href={this.state.currentArticle.url} target="_blank">
-            Why can I console.log the name but I can't put it here?
+          <a href={currentArticle.url} target="_blank">
+            {` ${currentArticle.source.name}`}
           </a>
         </p>
       </div>
