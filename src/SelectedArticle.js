@@ -15,7 +15,8 @@ class SelectedArticle extends Component {
         currentArticle: this.props.location.state
       },
       () => {
-        console.log(this.state.currentArticle.source)
+        console.log(this.state.currentArticle.source.name)
+        console.log(this.state.currentArticle)
       }
     )
   }
@@ -26,7 +27,7 @@ class SelectedArticle extends Component {
         <h1>{this.state.currentArticle.title}</h1>
         <p>by {this.state.currentArticle.author}</p>
         <img src={this.state.currentArticle.urlToImage} className="article-image" />
-        {/* <p>{this.state.currentArticle.description}</p> */}
+        {/* <p>{this.state.currentArticle}</p> */}
         <p>{this.state.currentArticle.content}</p>
         <p>
           Read the full article at

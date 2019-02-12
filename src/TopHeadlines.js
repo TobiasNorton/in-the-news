@@ -31,7 +31,10 @@ class TopHeadlines extends Component {
     return this.state.articles.map((article, index) => {
       return (
         <div key={index} className="headline-item">
-          <Link to={{ pathname: `/article/${encodeURI(article.title)}`, state: article }}>
+          <Link
+            to={{ pathname: `/article/${encodeURI(article.title)}`, state: article }}
+            className="headline"
+          >
             {article.title}
           </Link>
         </div>

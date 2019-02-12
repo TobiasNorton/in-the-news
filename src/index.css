@@ -14,7 +14,30 @@ code {
 nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.nav-items-right {
+  display: flex;
   justify-content: space-evenly;
+}
+
+.logo {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  text-decoration: none;
+}
+
+.nav-link {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  text-decoration: none;
+}
+
+.search {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  text-decoration: none;
 }
 
 main {
@@ -35,6 +58,14 @@ main {
 
 .headline-item {
   max-width: 30rem;
+  padding: 0.7rem;
+  margin: 0.1rem;
+  background-color: hsla(158, 0%, 89%, 1);
+}
+
+.headline {
+  text-decoration: none;
+  color: black;
 }
 
 .selected-article-main {
@@ -43,10 +74,4 @@ main {
 
 .article-image {
   max-width: 50rem;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  /* height: 50px; */
 }
