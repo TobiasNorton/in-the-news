@@ -29,16 +29,20 @@ class TopHeadlines extends Component {
 
   getTopHeadlines = () => {
     return this.state.articles.map((article, index) => {
-      return (
-        <div key={index} className="headline-item">
-          <Link
-            to={{ pathname: `/article/${parameterize(article.title)}`, state: article }}
-            className="headline"
-          >
-            {article.title}
-          </Link>
-        </div>
-      )
+      if (article.urlToImage) {
+        return (
+          <div key={index} className="headline-item">
+            <Link
+              to={{ pathname: `/article/${parameterize(article.title)}`, state: article }}
+              className="headline"
+            >
+              {article.title}
+            </Link>
+          </div>
+        )
+      } else {
+        return
+      }
     })
   }
 

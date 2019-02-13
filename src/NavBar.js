@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { parameterize } from './utility'
 
 class NavBar extends Component {
   constructor(props) {
@@ -11,21 +12,15 @@ class NavBar extends Component {
     }
   }
 
-  findArticles = () => {
-    // axios
-    //   .get(
-    //     `https://newsapi.org/v2/everything?q=${
-    //       this.state.userInput
-    //     }&apiKey=724c68adcd604fd7bcd865950a9eddb1`
-    //   )
-    //   .then(response => {})
-  }
-
   updateUserInput = event => {
     event.preventDefault()
     this.setState({
       userInput: event.target.value
     })
+  }
+
+  goToSearchResults = () => {
+    window.location = `/search_results/${parameterize(this.state.userInput)}`
   }
 
   click = () => {
@@ -43,7 +38,7 @@ class NavBar extends Component {
           <Link to="/top_headlines" className="nav-link">
             Top Headlines
           </Link>
-          <form onSubmit={this.findArticles} className="search">
+          <form onSubmit={this.goToSearchResults} className="search">
             <input type="text" name="search" onChange={this.updateUserInput} />
             <button>Search</button>
           </form>

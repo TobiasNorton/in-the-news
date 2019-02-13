@@ -40,6 +40,27 @@ nav {
   text-decoration: none;
 }
 
+.overview {
+  display: flex;
+  align-items: flex-start;
+  max-width: 40rem;
+  margin-bottom: 1rem;
+}
+
+.thumbnail {
+  width: 16rem;
+  margin-right: 1rem;
+}
+
+.title {
+  margin-top: 0;
+}
+
+.caption {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+
 main {
   display: flex;
   justify-content: center;
