@@ -14,18 +14,19 @@ class SearchResults extends Component {
   }
 
   componentDidMount = () => {
-    console.log(this.props.match.params)
-    // axios
-    //   .get(
-    //     `https://newsapi.org/v2/everything?q=${
-    //       this.props.match.params....
-    //     }&apiKey=724c68adcd604fd7bcd865950a9eddb1`
-    //   )
-    //   .then(response => {
-    //     this.setState({
-    //       articles: response.data.articles
-    //     })
-    //   })
+    console.log(this.props.location.state)
+    axios
+      .get(
+        `https://newsapi.org/v2/everything?q=${
+          this.props.location.state
+        }&apiKey=724c68adcd604fd7bcd865950a9eddb1`
+      )
+      .then(response => {
+        console.log(response.data)
+        this.setState({
+          searchResults: response.data.articles
+        })
+      })
   }
 
   getSearchResults = () => {

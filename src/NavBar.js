@@ -19,9 +19,9 @@ class NavBar extends Component {
     })
   }
 
-  goToSearchResults = () => {
-    window.location = `/search_results/${parameterize(this.state.userInput)}`
-  }
+  // goToSearchResults = () => {
+  //   window.location = `/search_results/${parameterize(this.state.userInput)}`
+  // }
 
   click = () => {
     console.log(this.state.userInput)
@@ -40,9 +40,16 @@ class NavBar extends Component {
           </Link>
           <form onSubmit={this.goToSearchResults} className="search">
             <input type="text" name="search" onChange={this.updateUserInput} />
-            <button>Search</button>
+            {/* <button type="submit">Search</button> */}
+            <Link
+              to={{
+                pathname: `/search_results/${parameterize(this.state.userInput)}`,
+                state: this.state.userInput
+              }}
+            >
+              Search
+            </Link>
           </form>
-          <button onClick={this.click}>Search</button>
         </div>
       </nav>
     )
