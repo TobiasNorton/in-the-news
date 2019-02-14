@@ -4,7 +4,9 @@ class Footer extends Component {
   render() {
     return (
       <footer>
-        Powered by <a href="https://newsapi.org/">NewsAPI.org</a>
+        <p>
+          Powered by <a href="https://newsapi.org/">NewsAPI.org</a>
+        </p>
       </footer>
     )
   }

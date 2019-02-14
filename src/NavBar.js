@@ -13,7 +13,7 @@ class NavBar extends Component {
   }
 
   updateUserInput = event => {
-    event.preventDefault()
+    // event.preventDefault()
     this.setState({
       userInput: event.target.value
     })
@@ -22,10 +22,6 @@ class NavBar extends Component {
   // goToSearchResults = () => {
   //   window.location = `/search_results/${parameterize(this.state.userInput)}`
   // }
-
-  click = () => {
-    console.log(this.state.userInput)
-  }
 
   render() {
     return (

@@ -9,6 +9,7 @@ class SearchResults extends Component {
     super(props)
 
     this.state = {
+      search: this.props.location.state || '',
       searchResults: []
     }
   }
@@ -18,14 +19,17 @@ class SearchResults extends Component {
     axios
       .get(
         `https://newsapi.org/v2/everything?q=${
-          this.props.location.state
+          this.state.search
         }&apiKey=724c68adcd604fd7bcd865950a9eddb1`
       )
       .then(response => {
-        console.log(response.data)
-        this.setState({
-          searchResults: response.data.articles
-        })
+        // console.log(response.data)
+        this.setState(
+          {
+            searchResults: response.data.articles
+          },
+          () => console.log(response.data.articles)
+        )
       })
   }
 
@@ -42,6 +46,14 @@ class SearchResults extends Component {
         </div>
       )
     })
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.location.state !== this.props.location.state) {
+      this.getSearchResults()
+    } else {
+      return
+    }
   }
 
   render() {

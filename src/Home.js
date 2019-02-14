@@ -25,7 +25,7 @@ class Home extends Component {
   }
 
   showArticles = () => {
-    console.log(this.state.articles)
+    // console.log(this.state.articles)
     return this.state.articles.map((article, index) => {
       if (article.urlToImage) {
         return (
@@ -47,7 +47,7 @@ class Home extends Component {
     return (
       <div>
         <h1>In the News</h1>
-        <p>Hey. This is the home page.</p>
+        <p className="main-caption">You heard it here or somewhere else first.</p>
         {this.showArticles()}
       </div>
     )
