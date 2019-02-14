@@ -69,84 +69,87 @@ class TopHeadlines extends Component {
     )
   }
 
-  business = () => {
-    this.setState({
-      category: 'business'
-    })
-    this.reloadHeadlines()
-  }
+  // business = () => {
+  //   this.setState({
+  //     category: 'business'
+  //   })
+  //   this.reloadHeadlines()
+  // }
 
-  entertainment = () => {
-    this.setState({
-      category: 'entertainment'
-    })
-    this.reloadHeadlines()
-  }
+  // entertainment = () => {
+  //   this.setState({
+  //     category: 'entertainment'
+  //   })
+  //   this.reloadHeadlines()
+  // }
 
-  general = () => {
-    this.setState({
-      category: 'general'
-    })
-    this.reloadHeadlines()
-  }
+  // general = () => {
+  //   this.setState({
+  //     category: 'general'
+  //   })
+  //   this.reloadHeadlines()
+  // }
 
-  health = () => {
-    this.setState({
-      category: 'health'
-    })
-    this.reloadHeadlines()
-  }
+  // health = () => {
+  //   this.setState({
+  //     category: 'health'
+  //   })
+  //   this.reloadHeadlines()
+  // }
 
-  science = () => {
-    this.setState({
-      category: 'science'
-    })
-    this.reloadHeadlines()
-  }
+  // science = () => {
+  //   this.setState({
+  //     category: 'science'
+  //   })
+  //   this.reloadHeadlines()
+  // }
 
-  sports = () => {
-    this.setState({
-      category: 'sports'
-    })
-    this.reloadHeadlines()
-  }
+  // sports = () => {
+  //   this.setState({
+  //     category: 'sports'
+  //   })
+  //   this.reloadHeadlines()
+  // }
 
-  technology = () => {
-    this.setState(
-      {
-        category: 'technology'
-      },
-      () => {
-        this.reloadHeadlines()
-      }
-    )
-  }
+  // technology = () => {
+  //   this.setState(
+  //     {
+  //       category: 'technology'
+  //     },
+  //     () => {
+  //       this.reloadHeadlines()
+  //     }
+  //   )
+  // }
 
   render() {
     return (
       <section>
-        <p>Choose a category</p>
-        <button onClick={this.reloadHeadlines} data-name="business">
-          Business
-        </button>
-        <button onClick={this.reloadHeadlines} data-name="entertainment">
-          Entertainment
-        </button>
-        <button onClick={this.reloadHeadlines} data-name="general">
-          General
-        </button>
-        <button onClick={this.reloadHeadlines} data-name="health">
-          Health
-        </button>
-        <button onClick={this.reloadHeadlines} data-name="science">
-          Science
-        </button>
-        <button onClick={this.reloadHeadlines} data-name="sports">
-          Sports
-        </button>
-        <button onClick={this.reloadHeadlines} data-name="business">
-          Technology
-        </button>
+        <p className="top-headlines-header">Choose a category</p>
+        <div className="categories-container">
+          <button onClick={this.reloadHeadlines} data-name="business">
+            Business
+          </button>
+          <button onClick={this.reloadHeadlines} data-name="entertainment">
+            Entertainment
+          </button>
+          <button onClick={this.reloadHeadlines} data-name="general">
+            General
+          </button>
+          <button onClick={this.reloadHeadlines} data-name="health">
+            Health
+          </button>
+          <button onClick={this.reloadHeadlines} data-name="science">
+            Science
+          </button>
+          <button onClick={this.reloadHeadlines} data-name="sports">
+            Sports
+          </button>
+          <button onClick={this.reloadHeadlines} data-name="business">
+            Technology
+          </button>
+        </div>
+
         <div className="headlines-container">{this.getTopHeadlines()}</div>
       </section>
     )

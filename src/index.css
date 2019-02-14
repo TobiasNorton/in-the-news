@@ -54,6 +54,29 @@ nav {
   text-decoration: none;
 }
 
+input {
+  border: none;
+  height: 1.3rem;
+  width: 12rem;
+}
+
+.search-button {
+  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  margin-left: 0.5rem;
+  border: 1px solid white;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.search-button:hover {
+  background-color: hsla(158, 19%, 100%, 0.5);
+  cursor: pointer;
+}
+
+.top-headlines-header {
+  text-align: center;
+}
+
 .overview {
   display: flex;
   align-items: flex-start;
@@ -82,6 +105,31 @@ main {
 
 .master-container {
   width: 100%;
+}
+
+.categories-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: hsla(211, 30%, 10%, 1);
+  padding: 2rem;
+}
+
+.categories-container button {
+  font-size: 0.8rem;
+  margin: 0.5rem;
+  width: 7rem;
+  padding: 0.3rem;
+  border: 1px solid white;
+  border-radius: 3px;
+  color: white;
+  background-color: hsla(158, 19%, 100%, 0);
+  transition: 0.3s;
+}
+
+.categories-container button:hover {
+  background-color: hsla(158, 19%, 100%, 0.5);
+  cursor: pointer;
 }
 
 .headlines-container {

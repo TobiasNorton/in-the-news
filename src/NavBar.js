@@ -42,6 +42,7 @@ class NavBar extends Component {
                 pathname: `/search_results/${parameterize(this.state.userInput)}`,
                 state: this.state.userInput
               }}
+              className="search-button"
             >
               Search
             </Link>

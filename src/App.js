@@ -15,9 +15,10 @@ class App extends Component {
       <Router>
         <div className="master-container">
           <NavBar />
+          <Route path="/top_headlines/" component={TopHeadlines} />
+
           <main>
             <Route exact path="/" component={Home} />
-            <Route path="/top_headlines/" component={TopHeadlines} />
             <Route path="/article/:title" component={SelectedArticle} />
             <Route path="/search_results/:input" component={SearchResults} />
           </main>
