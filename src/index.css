@@ -11,15 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-h1 {
+.main-title {
   text-align: center;
   margin-top: 4rem;
   font-size: 3rem;
+  font-family: 'Lato', sans-serif;
 }
 
 .main-caption {
   text-align: center;
   margin-bottom: 3rem;
+  font-family: 'Lato', sans-serif;
 }
 
 nav {
@@ -39,19 +41,22 @@ nav {
   margin-right: 2rem;
   text-decoration: none;
   color: hsla(0, 71%, 58%, 1);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .nav-link {
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   text-decoration: none;
   color: white;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .search {
   margin-left: 2rem;
   margin-right: 2rem;
   text-decoration: none;
+  font-family: 'Lato', sans-serif;
 }
 
 input {
@@ -66,6 +71,7 @@ input {
   border: 1px solid white;
   border-radius: 3px;
   transition: 0.3s;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .search-button:hover {
@@ -73,9 +79,9 @@ input {
   cursor: pointer;
 }
 
-.top-headlines-header {
+/* .top-headlines-header {
   text-align: center;
-}
+} */
 
 .overview {
   display: flex;
@@ -91,6 +97,7 @@ input {
 
 .title {
   margin-top: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 .caption {
@@ -132,23 +139,38 @@ main {
   cursor: pointer;
 }
 
+/* .top-headlines {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+.top-headlines-header {
+  text-align: center;
+}
+
 .headlines-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   max-width: 50rem;
   padding: 6rem;
+  margin: 0 auto;
 }
 
 .headline-item {
   max-width: 30rem;
-  padding: 0.7rem;
+  padding: 0.7rem 1.2rem 0.7rem 1.2rem;
   margin: 0.1rem;
+  min-width: 30rem;
   background-color: hsla(158, 0%, 89%, 1);
+  font-family: 'Lato', sans-serif;
 }
 
 .headline {
   text-decoration: none;
   color: black;
+  font-family: 'Lato', sans-serif;
 }
 
 .selected-article-main {
@@ -159,9 +181,16 @@ main {
   max-width: 50rem;
 }
 
-a {
+.news-link {
   text-decoration: none;
-  color: white;
+  color: hsla(0, 71%, 58%, 1);
+  font-family: 'Lato', sans-serif;
+}
+
+.news-api {
+  text-decoration: none;
+  color: hsla(0, 71%, 58%, 1);
+  font-family: 'Lato', sans-serif;
 }
 
 footer {
@@ -172,4 +201,5 @@ footer {
 footer p {
   color: white;
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }

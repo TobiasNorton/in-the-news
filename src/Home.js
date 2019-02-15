@@ -18,6 +18,7 @@ class Home extends Component {
         'https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=724c68adcd604fd7bcd865950a9eddb1'
       )
       .then(response => {
+        console.log(response.data.articles)
         this.setState({
           articles: response.data.articles
         })
@@ -46,7 +47,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1>In the News</h1>
+        <h1 className="main-title">In the News</h1>
         <p className="main-caption">You heard it here or somewhere else first.</p>
         {this.showArticles()}
       </div>

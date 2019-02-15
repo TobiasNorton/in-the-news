@@ -32,7 +32,7 @@ class SelectedArticle extends Component {
         <p>{currentArticle.content}</p>
         <p>
           Read the full article at
-          <a href={currentArticle.url} target="_blank">
+          <a href={currentArticle.url} target="_blank" className="news-link">
             {` ${currentArticle.source.name}`}
           </a>
         </p>
