@@ -50,7 +50,20 @@ class SearchResults extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.location.state !== this.props.location.state) {
-      this.getSearchResults()
+      axios
+        .get(
+          `https://newsapi.org/v2/everything?q=${
+            nextProps.location.state
+          }&apiKey=724c68adcd604fd7bcd865950a9eddb1`
+        )
+        .then(response => {
+          this.setState(
+            {
+              searchResults: response.data.articles
+            },
+            () => this.getSearchResults()
+          )
+        })
     } else {
       return
     }

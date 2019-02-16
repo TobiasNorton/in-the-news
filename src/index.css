@@ -72,6 +72,8 @@ input {
   border-radius: 3px;
   transition: 0.3s;
   font-family: 'Montserrat', sans-serif;
+  color: white;
+  text-decoration: none;
 }
 
 .search-button:hover {
@@ -103,6 +105,7 @@ input {
 .caption {
   font-size: 0.8rem;
   margin-bottom: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 main {
