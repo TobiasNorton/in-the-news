@@ -6,7 +6,7 @@ class Footer extends Component {
       <footer>
         <p>
           Powered by{' '}
-          <a href="https://newsapi.org/" className="news-api">
+          <a href="https://newsapi.org/" className="news-api" target="_blank">
             NewsAPI.org
           </a>
         </p>

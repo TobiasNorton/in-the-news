@@ -118,7 +118,9 @@ class Home extends Component {
             USA Today
           </button>
         </div>
-        <h1 className="main-title">In the News</h1>
+        <h1 className="main-title">
+          In the News <i class="far fa-comment" />
+        </h1>
         <p className="main-caption">You heard it here or somewhere else first.</p>
         <p>
           {this.state.domain ? `Currently Showing Top Headlines from ${this.state.domain}.` : ''}
