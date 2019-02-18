@@ -26,7 +26,9 @@ class NavBar extends Component {
   render() {
     return (
       <nav>
-        <p className="logo">In the News</p>
+        <Link to="/" className="logo">
+          In the News
+        </Link>
         <div className="nav-items-right">
           <Link to="/" className="nav-link">
             Home
