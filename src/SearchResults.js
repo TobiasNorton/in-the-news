@@ -15,7 +15,7 @@ class SearchResults extends Component {
   }
 
   componentDidMount = () => {
-    console.log(this.props.location.state)
+    // console.log(this.props.location.state)
     axios
       .get(
         `https://newsapi.org/v2/everything?q=${
@@ -24,28 +24,29 @@ class SearchResults extends Component {
       )
       .then(response => {
         // console.log(response.data)
-        this.setState(
-          {
-            searchResults: response.data.articles
-          },
-          () => console.log(response.data.articles)
-        )
+        this.setState({
+          searchResults: response.data.articles
+        })
       })
   }
 
   getSearchResults = () => {
-    return this.state.searchResults.map((article, index) => {
-      return (
-        <div key={index} className="headline-item">
-          <Link
-            to={{ pathname: `/article/${parameterize(article.title)}`, state: article }}
-            className="headline"
-          >
-            {article.title}
-          </Link>
-        </div>
-      )
-    })
+    if (this.state.searchResults.length > 0) {
+      return this.state.searchResults.map((article, index) => {
+        return (
+          <div key={index} className="headline-item">
+            <Link
+              to={{ pathname: `/article/${parameterize(article.title)}`, state: article }}
+              className="headline"
+            >
+              {article.title}
+            </Link>
+          </div>
+        )
+      })
+    } else {
+      return <p>Oops! We couldn't find any news articles with that keyword.</p>
+    }
   }
 
   componentWillReceiveProps(nextProps) {
