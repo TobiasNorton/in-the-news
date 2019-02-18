@@ -56,6 +56,11 @@ code {
   transition: 0.3s;
 }
 
+.outlets-container button:hover {
+  background-color: hsla(158, 19%, 100%, 0.5);
+  cursor: pointer;
+}
+
 nav {
   display: flex;
   align-items: center;
