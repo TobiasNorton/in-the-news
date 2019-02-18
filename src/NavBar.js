@@ -20,7 +20,10 @@ class NavBar extends Component {
   }
 
   // goToSearchResults = () => {
-  //   window.location = `/search_results/${parameterize(this.state.userInput)}`
+  //   window.location = {
+  //     pathname: `/search_results/${parameterize(this.state.userInput)}`,
+  //     state: this.state.userInput
+  //   }
   // }
 
   render() {

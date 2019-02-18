@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import NavBar from './NavBar'
 import Footer from './Footer'
 import axios from 'axios'
+import { parameterize } from './utility'
+
+import { Link } from 'react-router-dom'
 
 class Home extends Component {
   constructor(props) {
@@ -9,7 +12,8 @@ class Home extends Component {
 
     this.state = {
       articles: [],
-      outlet: ''
+      outlet: '',
+      domain: ''
     }
   }
 
@@ -32,9 +36,16 @@ class Home extends Component {
       if (article.urlToImage) {
         return (
           <div key={index} className="overview">
-            <img src={article.urlToImage} className="thumbnail" />
+            <Link to={{ pathname: `/article/${parameterize(article.title)}`, state: article }}>
+              <img src={article.urlToImage} className="thumbnail" />
+            </Link>
             <div>
-              <p className="title">{article.title}</p>
+              <Link
+                to={{ pathname: `/article/${parameterize(article.title)}`, state: article }}
+                style={{ textDecoration: 'none' }}
+              >
+                <p className="title">{article.title}</p>
+              </Link>
               <p className="caption">{article.description}</p>
             </div>
           </div>
@@ -48,17 +59,14 @@ class Home extends Component {
   getPreferredOutlet = event => {
     this.setState(
       {
-        outlet: event.target.dataset.domain
+        domain: event.target.dataset.domain
       },
       () =>
         axios
           .get(
-            `https://newsapi.org/v2/everything?domains=${
-              this.state.outlet
-            }&apiKey=724c68adcd604fd7bcd865950a9eddb1`
+            `https://newsapi.org/v2/everything?domains=${this.state.domain.toLowerCase()}&apiKey=724c68adcd604fd7bcd865950a9eddb1`
           )
           .then(response => {
-            console.log(response.data.articles)
             this.setState({
               articles: response.data.articles
             })
@@ -69,49 +77,52 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1 className="main-title">In the News</h1>
-        <p className="main-caption">You heard it here or somewhere else first.</p>
-        <div className="categories-container">
-          <button onClick={this.getPreferredOutlet} data-domain="bbc.com">
+        <div className="outlets-container">
+          <button onClick={this.getPreferredOutlet} data-domain="BBC.com">
             BBC
           </button>
-          <button onClick={this.getPreferredOutlet} data-domain="theatlantic.com">
+          <button onClick={this.getPreferredOutlet} data-domain="TheAtlantic.com">
             The Atlantic
           </button>
-          <button onClick={this.getPreferredOutlet} data-domain="reuters.com">
+          <button onClick={this.getPreferredOutlet} data-domain="Reuters.com">
             Reuters
           </button>
-          <button onClick={this.getPreferredOutlet} data-domain="nbcnews.com">
+          <button onClick={this.getPreferredOutlet} data-domain="NBCNews.com">
             NBC News
           </button>
-          <button onClick={this.getPreferredOutlet} data-domain="vice.com">
+          <button onClick={this.getPreferredOutlet} data-domain="Vice.com">
             Vice
           </button>
-          <button onClick={this.getPreferredOutlet} data-domain="indiewire.com">
+          <button onClick={this.getPreferredOutlet} data-domain="IndieWire.com">
             IndieWire
           </button>
-          <button onClick={this.getPreferredOutlet} data-domain="businessinsider.com">
+          <button onClick={this.getPreferredOutlet} data-domain="BusinessInsider.com">
             Business Insider
           </button>
-          <button onClick={this.getPreferredOutlet} data-domain="nytimes.com">
+          <button onClick={this.getPreferredOutlet} data-domain="NYTimes.com">
             New York Times
           </button>
-          <button onClick={this.getPreferredOutlet} data-domain="wsj.com">
+          <button onClick={this.getPreferredOutlet} data-domain="WSJ.com">
             WSJ
           </button>
-          <button onClick={this.getPreferredOutlet} data-domain="npr.org">
+          <button onClick={this.getPreferredOutlet} data-domain="NPR.org">
             NPR
           </button>
-          <button onClick={this.getPreferredOutlet} data-domain="cbsnews.com">
+          <button onClick={this.getPreferredOutlet} data-domain="CBSNews.com">
             CBS News
           </button>
-          <button onClick={this.getPreferredOutlet} data-domain="slate.com">
+          <button onClick={this.getPreferredOutlet} data-domain="Slate.com">
             Slate
           </button>
-          <button onClick={this.getPreferredOutlet} data-domain="usatoday.com">
+          <button onClick={this.getPreferredOutlet} data-domain="USAToday.com">
             USA Today
           </button>
         </div>
+        <h1 className="main-title">In the News</h1>
+        <p className="main-caption">You heard it here or somewhere else first.</p>
+        <p>
+          {this.state.domain ? `Currently Showing Top Headlines from ${this.state.domain}.` : ''}
+        </p>
         {this.showArticles()}
       </div>
     )
