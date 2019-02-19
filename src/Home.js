@@ -124,7 +124,7 @@ class Home extends Component {
         {/* <i class="far fa-comment" /> */}
         {/* <i class="fas fa-rainbow" /> */}
         <p className="main-caption">You heard it here or somewhere else first.</p>
-        <p>
+        <p className="currently-showing">
           {this.state.domain ? `Currently Showing Top Headlines from ${this.state.domain}.` : ''}
         </p>
         {this.showArticles()}
