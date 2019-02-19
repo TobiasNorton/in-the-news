@@ -56,9 +56,7 @@ class TopHeadlines extends Component {
       () => {
         axios
           .get(
-            `https://newsapi.org/v2/top-headlines?country=us&category=${
-              this.state.category
-            }&apiKey=724c68adcd604fd7bcd865950a9eddb1`
+            `https://newsapi.org/v2/top-headlines?country=us&category=${this.state.category.toLowerCase()}&apiKey=724c68adcd604fd7bcd865950a9eddb1`
           )
           .then(response => {
             this.setState({
@@ -76,80 +74,39 @@ class TopHeadlines extends Component {
   //   this.reloadHeadlines()
   // }
 
-  // entertainment = () => {
-  //   this.setState({
-  //     category: 'entertainment'
-  //   })
-  //   this.reloadHeadlines()
-  // }
-
-  // general = () => {
-  //   this.setState({
-  //     category: 'general'
-  //   })
-  //   this.reloadHeadlines()
-  // }
-
-  // health = () => {
-  //   this.setState({
-  //     category: 'health'
-  //   })
-  //   this.reloadHeadlines()
-  // }
-
-  // science = () => {
-  //   this.setState({
-  //     category: 'science'
-  //   })
-  //   this.reloadHeadlines()
-  // }
-
-  // sports = () => {
-  //   this.setState({
-  //     category: 'sports'
-  //   })
-  //   this.reloadHeadlines()
-  // }
-
-  // technology = () => {
-  //   this.setState(
-  //     {
-  //       category: 'technology'
-  //     },
-  //     () => {
-  //       this.reloadHeadlines()
-  //     }
-  //   )
-  // }
-
   render() {
     return (
       <section className="top-headlines">
         <p className="top-headlines-header">Choose a category</p>
+
         <div className="categories-container">
-          <button onClick={this.reloadHeadlines} data-name="business">
+          <button onClick={this.reloadHeadlines} data-name="Business">
             Business
           </button>
-          <button onClick={this.reloadHeadlines} data-name="entertainment">
+          <button onClick={this.reloadHeadlines} data-name="Entertainment">
             Entertainment
           </button>
-          <button onClick={this.reloadHeadlines} data-name="general">
+          <button onClick={this.reloadHeadlines} data-name="General">
             General
           </button>
-          <button onClick={this.reloadHeadlines} data-name="health">
+          <button onClick={this.reloadHeadlines} data-name="Health">
             Health
           </button>
-          <button onClick={this.reloadHeadlines} data-name="science">
+          <button onClick={this.reloadHeadlines} data-name="Science">
             Science
           </button>
-          <button onClick={this.reloadHeadlines} data-name="sports">
+          <button onClick={this.reloadHeadlines} data-name="Sports">
             Sports
           </button>
-          <button onClick={this.reloadHeadlines} data-name="business">
+          <button onClick={this.reloadHeadlines} data-name="Business">
             Technology
           </button>
         </div>
-
+        <p className="currently-showing">
+          {this.state.category !== 'general'
+            ? `Currently showing top headlines for ${this.state.category}`
+            : ''}
+        </p>
         <div className="headlines-container">{this.getTopHeadlines()}</div>
       </section>
     )

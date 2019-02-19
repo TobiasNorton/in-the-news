@@ -71,7 +71,16 @@ class SearchResults extends Component {
   }
 
   render() {
-    return <div className="headlines-container">{this.getSearchResults()}</div>
+    return (
+      <>
+        <p className="currently-showing">
+          {this.state.search
+            ? `Currently showing results containing keyword "${this.state.search}"`
+            : ''}
+        </p>
+        <div className="headlines-container">{this.getSearchResults()}</div>
+      </>
+    )
   }
 }
 

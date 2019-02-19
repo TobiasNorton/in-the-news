@@ -28,7 +28,7 @@ code {
   /* margin-bottom: 3rem; */
   margin-top: 0;
   padding-bottom: 2rem;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: white;
   background-color: hsla(211, 30%, 10%, 1);
@@ -136,9 +136,11 @@ input {
 .overview {
   display: flex;
   align-items: flex-start;
-  max-width: 40rem;
+  max-width: 46rem;
   margin-bottom: 1rem;
   margin: 1rem auto;
+  margin-left: 4rem;
+  margin-right: 4rem;
 }
 
 .thumbnail {
@@ -209,7 +211,7 @@ main {
   flex-direction: column;
   align-items: center;
   max-width: 50rem;
-  padding: 6rem;
+  padding: 1rem 6rem 6rem 6rem;
   margin: 0 auto;
 }
 
