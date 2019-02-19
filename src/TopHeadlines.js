@@ -103,7 +103,7 @@ class TopHeadlines extends Component {
           </button>
         </div>
         <p className="currently-showing">
-          {this.state.category !== 'general'
+          {this.state.category !== 'General'
             ? `Currently showing top headlines for ${this.state.category}`
             : ''}
         </p>
