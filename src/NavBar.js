@@ -30,7 +30,7 @@ class NavBar extends Component {
     return (
       <nav>
         <Link to="/" className="logo">
-          In the News <i class="far fa-comment" />
+          In the News <i class="fab fa-telegram-plane" />
         </Link>
         <div className="nav-items-right">
           <Link to="/" className="nav-link">

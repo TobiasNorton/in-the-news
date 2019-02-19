@@ -119,8 +119,10 @@ class Home extends Component {
           </button>
         </div>
         <h1 className="main-title">
-          In the News <i class="far fa-comment" />
+          In the News <i class="fab fa-telegram-plane" />
         </h1>
+        {/* <i class="far fa-comment" /> */}
+        {/* <i class="fas fa-rainbow" /> */}
         <p className="main-caption">You heard it here or somewhere else first.</p>
         <p>
           {this.state.domain ? `Currently Showing Top Headlines from ${this.state.domain}.` : ''}
