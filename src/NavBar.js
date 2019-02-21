@@ -40,7 +40,7 @@ class NavBar extends Component {
             Top Headlines
           </Link>
           <form onSubmit={this.goToSearchResults} className="search">
-            <input type="text" name="search" onChange={this.updateUserInput} />
+            <input type="text" name="search" autocomplete="off" onChange={this.updateUserInput} />
             {/* <button type="submit">Search</button> */}
             <Link
               to={{
