@@ -86,7 +86,7 @@ class TopHeadlines extends Component {
           <button onClick={this.reloadHeadlines} data-name="Entertainment">
             Entertainment
           </button>
-          <button onClick={this.reloadHeadlines} data-name="General">
+          <button onClick={this.reloadHeadlines} data-name="general">
             General
           </button>
           <button onClick={this.reloadHeadlines} data-name="Health">
@@ -98,12 +98,12 @@ class TopHeadlines extends Component {
           <button onClick={this.reloadHeadlines} data-name="Sports">
             Sports
           </button>
-          <button onClick={this.reloadHeadlines} data-name="Business">
+          <button onClick={this.reloadHeadlines} data-name="Technology">
             Technology
           </button>
         </div>
         <p className="currently-showing">
-          {this.state.category !== 'General'
+          {this.state.category !== 'general'
             ? `Currently showing top headlines for ${this.state.category}`
             : ''}
         </p>
