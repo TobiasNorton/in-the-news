@@ -43,7 +43,7 @@ class SearchResults extends Component {
         )
       })
     } else {
-      return <p>Oops! We couldn't find any news articles with that keyword.</p>
+      return <p>Oops! We could not find any news articles with that keyword.</p>
     }
   }
 
