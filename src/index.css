@@ -190,7 +190,7 @@ main {
   border-radius: 3px;
   color: white;
   background-color: hsla(158, 19%, 100%, 0);
-  transition: 0.3s;
+  /* transition: 0.3s; */
 }
 
 .categories-container button:hover {
