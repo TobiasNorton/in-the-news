@@ -39,7 +39,7 @@ class Home extends Component {
             <Link to={{ pathname: `/article/${parameterize(article.title)}`, state: article }}>
               <img src={article.urlToImage} className="thumbnail" />
             </Link>
-            <div>
+            <div className="overview-textbox">
               <Link
                 to={{ pathname: `/article/${parameterize(article.title)}`, state: article }}
                 style={{ textDecoration: 'none' }}
@@ -133,7 +133,7 @@ class Home extends Component {
           <button onClick={this.getPreferredOutlet}>All Sources</button>
         </div>
         <h1 className="main-title">
-          In the News <i class="fab fa-telegram-plane" />
+          In the News <i className="fab fa-telegram-plane" />
         </h1>
         {/* <i class="far fa-comment" /> */}
         {/* <i class="fas fa-rainbow" /> */}

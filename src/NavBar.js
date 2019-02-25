@@ -22,7 +22,7 @@ class NavBar extends Component {
     return (
       <nav>
         <Link to="/" className="logo">
-          In the News <i class="fab fa-telegram-plane" />
+          In the News <i className="fab fa-telegram-plane" />
         </Link>
         <div className="nav-items-right">
           <Link to="/" className="nav-link">
@@ -32,7 +32,7 @@ class NavBar extends Component {
             Top Headlines
           </Link>
           <form onSubmit={this.goToSearchResults} className="search">
-            <input type="text" name="search" autocomplete="off" onChange={this.updateUserInput} />
+            <input type="text" name="search" autoComplete="off" onChange={this.updateUserInput} />
             <Link
               to={{
                 pathname: `/search_results/${parameterize(this.state.userInput)}`,
