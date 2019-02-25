@@ -78,7 +78,6 @@ class TopHeadlines extends Component {
     return (
       <section className="top-headlines">
         <p className="top-headlines-header">Choose a category</p>
-
         <div className="categories-container">
           <button onClick={this.reloadHeadlines} data-name="Business">
             Business

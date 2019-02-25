@@ -1,25 +1,29 @@
 import React, { Component } from 'react'
 
 class SelectedArticle extends Component {
-  // constructor(props) {
-  //   super(props)
-
-  //   this.state = {
-  //     currentArticle: []
-  //   }
-  // }
-
-  // componentDidMount = () => {
-  //   this.setState(
-  //     {
-  //       currentArticle: this.props.location.state
-  //     },
-  //     () => {
-  //       console.log(this.state.currentArticle.source.name)
-  //       console.log(this.state.currentArticle)
-  //     }
-  //   )
-  // }
+  fullArticle = () => {
+    const currentArticle = this.props.location.state
+    console.log(currentArticle.author)
+    if (!currentArticle.author) {
+      return (
+        <p>
+          For the author and full article, visit
+          <a href={currentArticle.url} target="_blank" className="news-link">
+            {` ${currentArticle.source.name}`}
+          </a>
+        </p>
+      )
+    } else {
+      return (
+        <p>
+          Read the full article at
+          <a href={currentArticle.url} target="_blank" className="news-link">
+            {` ${currentArticle.source.name}`}
+          </a>
+        </p>
+      )
+    }
+  }
 
   render() {
     const currentArticle = this.props.location.state
@@ -27,15 +31,10 @@ class SelectedArticle extends Component {
     return (
       <div className="selected-article-main">
         <h1>{currentArticle.title}</h1>
-        <p>by {currentArticle.author}</p>
+        <p>{currentArticle.author ? `by ${currentArticle.author}` : ''}</p>
         <img src={currentArticle.urlToImage} className="article-image" />
         <p>{currentArticle.content}</p>
-        <p>
-          Read the full article at
-          <a href={currentArticle.url} target="_blank" className="news-link">
-            {` ${currentArticle.source.name}`}
-          </a>
-        </p>
+        {this.fullArticle()}
       </div>
     )
   }
