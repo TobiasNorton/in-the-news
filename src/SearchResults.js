@@ -15,7 +15,6 @@ class SearchResults extends Component {
   }
 
   componentDidMount = () => {
-    // console.log(this.props.location.state)
     axios
       .get(
         `https://newsapi.org/v2/everything?q=${
@@ -23,7 +22,6 @@ class SearchResults extends Component {
         }&apiKey=724c68adcd604fd7bcd865950a9eddb1`
       )
       .then(response => {
-        // console.log(response.data)
         this.setState({
           searchResults: response.data.articles
         })

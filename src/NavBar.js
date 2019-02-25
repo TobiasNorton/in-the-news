@@ -13,18 +13,10 @@ class NavBar extends Component {
   }
 
   updateUserInput = event => {
-    // event.preventDefault()
     this.setState({
       userInput: event.target.value
     })
   }
-
-  // goToSearchResults = () => {
-  //   window.location = {
-  //     pathname: `/search_results/${parameterize(this.state.userInput)}`,
-  //     state: this.state.userInput
-  //   }
-  // }
 
   render() {
     return (
@@ -41,7 +33,6 @@ class NavBar extends Component {
           </Link>
           <form onSubmit={this.goToSearchResults} className="search">
             <input type="text" name="search" autocomplete="off" onChange={this.updateUserInput} />
-            {/* <button type="submit">Search</button> */}
             <Link
               to={{
                 pathname: `/search_results/${parameterize(this.state.userInput)}`,
