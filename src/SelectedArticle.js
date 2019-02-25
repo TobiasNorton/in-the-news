@@ -6,7 +6,7 @@ class SelectedArticle extends Component {
     console.log(currentArticle.author)
     if (!currentArticle.author) {
       return (
-        <p>
+        <p className="external-article">
           For the author and full article, visit
           <a href={currentArticle.url} target="_blank" className="news-link">
             {` ${currentArticle.source.name}`}
@@ -15,7 +15,7 @@ class SelectedArticle extends Component {
       )
     } else {
       return (
-        <p>
+        <p className="external-article">
           Read the full article at
           <a href={currentArticle.url} target="_blank" className="news-link">
             {` ${currentArticle.source.name}`}
@@ -31,9 +31,9 @@ class SelectedArticle extends Component {
     return (
       <div className="selected-article-main">
         <h1>{currentArticle.title}</h1>
-        <p>{currentArticle.author ? `by ${currentArticle.author}` : ''}</p>
+        <p className="author">{currentArticle.author ? `by ${currentArticle.author}` : ''}</p>
         <img src={currentArticle.urlToImage} className="article-image" />
-        <p>{currentArticle.content}</p>
+        <p className="content">{currentArticle.content}</p>
         {this.fullArticle()}
       </div>
     )

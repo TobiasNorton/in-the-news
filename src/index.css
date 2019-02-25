@@ -245,6 +245,18 @@ main {
   max-width: 50rem;
 }
 
+.external-article {
+  font-family: 'Lato', sans-serif;
+}
+
+.content {
+  font-family: 'Lato', sans-serif;
+}
+
+.author {
+  font-family: 'Lato', sans-serif;
+}
+
 .news-link {
   text-decoration: none;
   color: hsla(0, 71%, 58%, 1);
