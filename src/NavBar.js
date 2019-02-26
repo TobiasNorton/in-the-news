@@ -46,15 +46,15 @@ class NavBar extends Component {
           </form>
         </div>
         <Menu right>
-          <p id="home" className="menu-item">
+          <Link to="/" id="home" className="menu-item">
             Home
-          </p>
-          <p id="about" className="menu-item">
+          </Link>
+          <Link to="/top_headlines" id="about" className="menu-item">
             Top Headlines
-          </p>
-          <p id="contact" className="menu-item">
+          </Link>
+          <Link to="/search" id="contact" className="menu-item">
             Search
-          </p>
+          </Link>
           {/* <p onClick={ this.showSettings } className="menu-item--small" href="">Settings</a> */}
         </Menu>
       </nav>

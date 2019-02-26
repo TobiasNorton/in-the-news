@@ -212,6 +212,7 @@ main {
 
 .top-headlines-header {
   text-align: center;
+  font-family: 'Lato', sans-serif;
 }
 
 .headlines-container {
@@ -360,6 +361,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Individual item */
 .bm-item {
   display: inline-block;
+}
+
+.menu-item {
+  text-decoration: none;
+  color: white;
+  margin-bottom: 2rem;
 }
 
 /* Styling of overlay */

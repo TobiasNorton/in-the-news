@@ -8,6 +8,7 @@ import NavBar from './NavBar'
 import Footer from './Footer'
 import SelectedArticle from './SelectedArticle'
 import SearchResults from './SearchResults'
+import MobileSearch from './MobileSearch'
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/article/:title" component={SelectedArticle} />
             <Route path="/search_results/:input" component={SearchResults} />
+            <Route path="/search" component={MobileSearch} />
           </main>
 
           <Footer />
