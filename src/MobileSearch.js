@@ -11,6 +11,10 @@ class MobileSearch extends Component {
     }
   }
 
+  componentDidMount = () => {
+    console.log("We're in the MobileSearch component")
+  }
+
   updateUserInput = event => {
     this.setState({
       userInput: event.target.value
@@ -20,14 +24,20 @@ class MobileSearch extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.goToSearchResults} className="search">
-          <input type="text" name="search" autoComplete="off" onChange={this.updateUserInput} />
+        <form onSubmit={this.goToSearchResults} className="search-mobile">
+          <input
+            type="text"
+            className="mobile-search-input"
+            name="search"
+            autoComplete="off"
+            onChange={this.updateUserInput}
+          />
           <Link
             to={{
               pathname: `/search_results/${parameterize(this.state.userInput)}`,
               state: this.state.userInput
             }}
-            className="search-button"
+            className="search-button-mobile"
           >
             Search
           </Link>

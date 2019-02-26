@@ -276,6 +276,31 @@ main {
   font-family: 'Lato', sans-serif;
 }
 
+.search-mobile {
+  margin: 3rem;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  align-items: center;
+  /* border: 1px solid hsla(211, 30%, 10%, 1); */
+}
+
+.mobile-search-input {
+  border: 1px solid hsla(211, 30%, 10%, 1);
+}
+
+.search-button-mobile {
+  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  margin-left: 0.5rem;
+  border: 1px solid hsla(211, 30%, 10%, 1);
+  border-radius: 3px;
+  transition: 0.3s;
+  font-family: 'Montserrat', sans-serif;
+  color: hsla(211, 30%, 10%, 1);
+  text-decoration: none;
+  display: block;
+}
+
 footer {
   background-color: hsla(211, 30%, 10%, 1);
   padding: 1rem;
