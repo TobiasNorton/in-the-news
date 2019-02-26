@@ -31,6 +31,7 @@ class MobileSearch extends Component {
             name="search"
             autoComplete="off"
             onChange={this.updateUserInput}
+            placeholder="Search by keyword"
           />
           <Link
             to={{

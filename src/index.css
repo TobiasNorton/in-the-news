@@ -246,6 +246,10 @@ main {
 
 .selected-article-main {
   max-width: 50rem;
+  background-color: grey;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin: 1rem;
 }
 
 .article-image {
@@ -287,6 +291,7 @@ main {
 
 .mobile-search-input {
   border: 1px solid hsla(211, 30%, 10%, 1);
+  font-size: 0.9rem;
 }
 
 .search-button-mobile {
@@ -400,6 +405,16 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: rgba(0, 0, 0, 0.3);
 }
 
+@media only screen and (max-width: 870px) {
+  .selected-article-main {
+    width: 90vw;
+  }
+
+  .article-image {
+    max-width: 85vw;
+  }
+}
+
 @media only screen and (max-width: 750px) {
   .bm-burger-button {
     display: block;
@@ -409,5 +424,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
   .search,
   .search-button {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .selected-article-main {
+    padding: 0.5rem;
   }
 }
