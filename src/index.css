@@ -220,15 +220,14 @@ main {
   flex-direction: column;
   align-items: center;
   max-width: 50rem;
-  padding: 0 6rem 6rem 6rem;
+  /* padding: 0 6rem 6rem 6rem; */
   margin: 0 auto;
 }
 
 .headline-item {
-  max-width: 30rem;
+  width: 30rem;
   padding: 0.7rem 1.2rem 0.7rem 1.2rem;
   margin: 0.1rem;
-  min-width: 30rem;
   /* background-color: hsla(158, 0%, 89%, 1); */
   background-color: hsla(211, 30%, 10%, 1);
   font-family: 'Lato', sans-serif;
@@ -424,6 +423,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
   .search,
   .search-button {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .headline-item {
+    width: 85vw;
   }
 }
 
