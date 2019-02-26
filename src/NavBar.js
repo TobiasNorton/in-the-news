@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { parameterize } from './utility'
+import { slide as Menu } from 'react-burger-menu'
 
 class NavBar extends Component {
   constructor(props) {
@@ -44,6 +45,18 @@ class NavBar extends Component {
             </Link>
           </form>
         </div>
+        <Menu right>
+          <p id="home" className="menu-item">
+            Home
+          </p>
+          <p id="about" className="menu-item">
+            Top Headlines
+          </p>
+          <p id="contact" className="menu-item">
+            Search
+          </p>
+          {/* <p onClick={ this.showSettings } className="menu-item--small" href="">Settings</a> */}
+        </Menu>
       </nav>
     )
   }
