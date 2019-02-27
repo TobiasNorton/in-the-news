@@ -43,7 +43,9 @@ class Home extends Component {
                 to={{ pathname: `/article/${parameterize(article.title)}`, state: article }}
                 style={{ textDecoration: 'none' }}
               >
-                <p className="title">{article.title}</p>
+                <p className="title">
+                  {article.title} {this.state.domain ? ` - ${article.source.name}` : ''}
+                </p>
               </Link>
               <p className="caption">{article.description}</p>
             </div>
