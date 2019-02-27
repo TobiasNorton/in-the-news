@@ -30,7 +30,7 @@ class SelectedArticle extends Component {
     console.log(currentArticle)
     return (
       <div className="selected-article-main">
-        <h1>{currentArticle.title}</h1>
+        <h1 className="selected-article-title">{currentArticle.title}</h1>
         <p className="author">{currentArticle.author ? `by ${currentArticle.author}` : ''}</p>
         <img src={currentArticle.urlToImage} className="article-image" />
         <p className="content">{currentArticle.content}</p>

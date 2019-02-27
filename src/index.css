@@ -258,10 +258,13 @@ main {
 
 .selected-article-main {
   max-width: 50rem;
-  background-color: grey;
   padding-left: 2rem;
   padding-right: 2rem;
   margin: 1rem;
+}
+
+.selected-article-title {
+  margin-bottom: 0;
 }
 
 .article-image {
@@ -278,6 +281,8 @@ main {
 
 .author {
   font-family: 'Lato', sans-serif;
+  margin-top: 0.8rem;
+  margin-bottom: 1.5rem;
 }
 
 .news-link {

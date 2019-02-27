@@ -15,6 +15,8 @@ class SearchResults extends Component {
   }
 
   componentDidMount = () => {
+    console.log(this.state.search)
+    console.log(this.state.searchResults)
     axios
       .get(
         `https://newsapi.org/v2/everything?q=${
@@ -37,7 +39,7 @@ class SearchResults extends Component {
               to={{ pathname: `/article/${parameterize(article.title)}`, state: article }}
               className="headline"
             >
-              {article.title}
+              {article.title} - {article.source.name}
             </Link>
           </div>
         )
@@ -72,7 +74,7 @@ class SearchResults extends Component {
     return (
       <div className="search-results">
         <p className="currently-showing">
-          {this.state.search
+          {this.state.searchResults > 0
             ? `Currently showing results containing keyword "${this.state.search}"`
             : ''}
         </p>
