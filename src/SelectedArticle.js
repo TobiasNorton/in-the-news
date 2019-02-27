@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 class SelectedArticle extends Component {
   fullArticle = () => {
     const currentArticle = this.props.location.state
-    console.log(currentArticle.author)
     if (!currentArticle.author) {
       return (
         <p className="external-article">
@@ -27,7 +26,6 @@ class SelectedArticle extends Component {
 
   render() {
     const currentArticle = this.props.location.state
-    console.log(currentArticle)
     return (
       <div className="selected-article-main">
         <h1 className="selected-article-title">{currentArticle.title}</h1>

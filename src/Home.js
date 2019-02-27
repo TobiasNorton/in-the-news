@@ -23,7 +23,6 @@ class Home extends Component {
         'https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=724c68adcd604fd7bcd865950a9eddb1'
       )
       .then(response => {
-        console.log(response.data.articles)
         this.setState({
           articles: response.data.articles
         })
@@ -79,7 +78,6 @@ class Home extends Component {
           'https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=724c68adcd604fd7bcd865950a9eddb1'
         )
         .then(response => {
-          console.log(response.data.articles)
           this.setState({
             articles: response.data.articles
           })
@@ -136,8 +134,6 @@ class Home extends Component {
         <h1 className="main-title">
           In the News <i className="fab fa-telegram-plane" />
         </h1>
-        {/* <i class="far fa-comment" /> */}
-        {/* <i class="fas fa-rainbow" /> */}
         <p className="main-caption">You heard it here (or somewhere else) first.</p>
         <p className="currently-showing">
           {this.state.domain ? `Currently Showing Top Headlines from ${this.state.domain}` : ''}

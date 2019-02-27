@@ -47,8 +47,6 @@ class TopHeadlines extends Component {
   }
 
   reloadHeadlines = event => {
-    console.log(event.target.dataset.name)
-
     this.setState(
       {
         category: event.target.dataset.name

@@ -15,8 +15,6 @@ class SearchResults extends Component {
   }
 
   componentDidMount = () => {
-    console.log(this.state.search)
-    console.log(this.state.searchResults)
     axios
       .get(
         `https://newsapi.org/v2/everything?q=${
