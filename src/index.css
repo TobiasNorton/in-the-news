@@ -184,7 +184,7 @@ main {
   justify-content: center;
   flex-wrap: wrap;
   background-color: hsla(211, 30%, 10%, 1);
-  padding: 2rem;
+  padding: 1rem 2rem 2rem 2rem;
 }
 
 .categories-container button {
@@ -213,6 +213,13 @@ main {
 .top-headlines-header {
   text-align: center;
   font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  padding-top: 2rem;
+  background-color: hsla(211, 30%, 10%, 1);
 }
 
 .headlines-container {
