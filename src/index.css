@@ -35,6 +35,18 @@ code {
   width: 100%;
 }
 
+.outlet-preference-header {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  padding-top: 1rem;
+  background-color: hsla(211, 30%, 10%, 1);
+}
+
 .currently-showing {
   font-family: 'Lato', sans-serif;
   font-size: 1.2rem;
@@ -44,12 +56,12 @@ code {
 }
 
 .outlets-container {
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   background-color: hsla(211, 30%, 10%, 1);
-  padding: 2rem;
+  padding: 1rem 2rem 2rem 2rem;
 }
 
 .outlets-container button {
@@ -204,16 +216,10 @@ main {
   cursor: pointer;
 }
 
-/* .top-headlines {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
-
 .top-headlines-header {
   text-align: center;
   font-family: 'Lato', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
   color: white;
   margin-top: 2rem;
@@ -315,7 +321,8 @@ main {
 footer {
   background-color: hsla(211, 30%, 10%, 1);
   padding: 1rem;
-  margin-top: auto;
+  /* margin-top: auto; */
+  margin-top: 4rem;
   /* width: 97vw; */
 }
 

@@ -90,6 +90,7 @@ class Home extends Component {
   render() {
     return (
       <div>
+        <p className="outlet-preference-header">Have an Outlet Preference?</p>
         <div className="outlets-container">
           <button onClick={this.getPreferredOutlet} data-domain="BBC.com">
             BBC
