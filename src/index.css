@@ -52,11 +52,10 @@ code {
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
-  margin: 2rem;
+  margin: 3rem;
 }
 
 .outlets-container {
-  /* margin-top: 2rem; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -140,10 +139,6 @@ input {
   cursor: pointer;
 }
 
-/* .top-headlines-header {
-  text-align: center;
-} */
-
 .overview {
   display: flex;
   align-items: flex-start;
@@ -208,7 +203,6 @@ main {
   border-radius: 3px;
   color: white;
   background-color: hsla(158, 19%, 100%, 0);
-  /* transition: 0.3s; */
 }
 
 .categories-container button:hover {
@@ -294,6 +288,14 @@ main {
 .news-api {
   text-decoration: none;
   color: hsla(0, 71%, 58%, 1);
+  font-family: 'Lato', sans-serif;
+}
+
+.search-results-header {
+  text-align: center;
+  margin: 3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
   font-family: 'Lato', sans-serif;
 }
 

@@ -24,12 +24,24 @@ class SelectedArticle extends Component {
     }
   }
 
+  // publishedAt = date => {
+  //   let newDate = new Date(date * 1000).toLocaleDateString([], {
+  //     weekday: 'long',
+  //     month: 'long',
+  //     day: 'numeric',
+  //     year: 'numeric'
+  //   })
+  //   return newDate
+  // }
+
   render() {
     const currentArticle = this.props.location.state
+    const unixTimeStamp = Date.parse(currentArticle.publishedAt)
     return (
       <div className="selected-article-main">
         <h1 className="selected-article-title">{currentArticle.title}</h1>
         <p className="author">{currentArticle.author ? `by ${currentArticle.author}` : ''}</p>
+        {/* <p>{this.publishedAt(unixTimeStamp)}</p> */}
         <img src={currentArticle.urlToImage} className="article-image" />
         <p className="content">{currentArticle.content}</p>
         {this.fullArticle()}

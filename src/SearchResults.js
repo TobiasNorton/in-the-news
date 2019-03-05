@@ -71,6 +71,9 @@ class SearchResults extends Component {
   render() {
     return (
       <div className="search-results">
+        <p className="search-results-header">{`Showing search results for "${
+          this.state.search
+        }"`}</p>
         <p className="currently-showing">
           {this.state.searchResults > 0
             ? `Currently showing results containing keyword "${this.state.search}"`

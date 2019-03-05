@@ -19,6 +19,10 @@ class NavBar extends Component {
     })
   }
 
+  goToSearchResults = event => {
+    event.preventDefault()
+  }
+
   render() {
     return (
       <nav>
