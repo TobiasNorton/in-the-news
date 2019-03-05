@@ -7,9 +7,8 @@ import { Link } from 'react-router-dom'
 class SearchResults extends Component {
   constructor(props) {
     super(props)
-
     this.state = {
-      search: this.props.location.state || '',
+      search: this.props.match.params.input || '',
       searchResults: []
     }
   }

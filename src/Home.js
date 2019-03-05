@@ -101,9 +101,9 @@ class Home extends Component {
           <button onClick={this.getPreferredOutlet} data-domain="Reuters.com">
             Reuters
           </button>
-          {/* <button onClick={this.getPreferredOutlet} data-domain="NBCNews.com">
+          <button onClick={this.getPreferredOutlet} data-domain="NBCNews.com">
             NBC News
-          </button> */}
+          </button>
           <button onClick={this.getPreferredOutlet} data-domain="Vice.com">
             Vice
           </button>

@@ -21,6 +21,7 @@ class NavBar extends Component {
 
   goToSearchResults = event => {
     event.preventDefault()
+    window.location = `/search_results/${parameterize(this.state.userInput)}`
   }
 
   render() {
