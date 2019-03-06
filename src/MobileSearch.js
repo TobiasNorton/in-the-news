@@ -24,6 +24,7 @@ class MobileSearch extends Component {
   render() {
     return (
       <div>
+        <p className="mobile-search-header">What would you like to read about?</p>
         <form onSubmit={this.goToSearchResults} className="search-mobile">
           <input
             type="text"

@@ -305,7 +305,14 @@ main {
   font-family: 'Lato', sans-serif;
   display: flex;
   align-items: center;
-  /* border: 1px solid hsla(211, 30%, 10%, 1); */
+}
+
+.mobile-search-header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 3rem;
+  font-family: 'Lato', sans-serif;
 }
 
 .mobile-search-input {
