@@ -30,7 +30,6 @@ class Home extends Component {
   }
 
   showArticles = () => {
-    // console.log(this.state.articles)
     return this.state.articles.map((article, index) => {
       if (article.urlToImage) {
         return (

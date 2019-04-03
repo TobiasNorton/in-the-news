@@ -65,13 +65,6 @@ class TopHeadlines extends Component {
     )
   }
 
-  // business = () => {
-  //   this.setState({
-  //     category: 'business'
-  //   })
-  //   this.reloadHeadlines()
-  // }
-
   render() {
     return (
       <section className="top-headlines">

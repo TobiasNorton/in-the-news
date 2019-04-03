@@ -60,7 +60,6 @@ class NavBar extends Component {
           <Link to="/search" id="contact" className="menu-item">
             Search
           </Link>
-          {/* <p onClick={ this.showSettings } className="menu-item--small" href="">Settings</a> */}
         </Menu>
       </nav>
     )
