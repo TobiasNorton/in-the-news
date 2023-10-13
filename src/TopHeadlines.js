@@ -1,31 +1,39 @@
-import React, { Component } from 'react'
-import axios from 'axios'
-import { parameterize } from './utility'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import axios from 'axios';
+import { parameterize } from './utility';
+import { Link } from 'react-router-dom';
+import CorsMessage from './CorsMessage';
 
 class TopHeadlines extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       articles: [],
-      category: 'general'
-    }
+      category: 'general',
+      upgradeRequired: false,
+    };
   }
 
   componentDidMount = () => {
     axios
       .get(
-        `https://newsapi.org/v2/top-headlines?country=us&category=${
-          this.state.category
-        }&apiKey=724c68adcd604fd7bcd865950a9eddb1`
+        `https://newsapi.org/v2/top-headlines?country=us&category=${this.state.category}&apiKey=724c68adcd604fd7bcd865950a9eddb1`
       )
-      .then(response => {
+      .then((response) => {
         this.setState({
-          articles: response.data.articles
-        })
+          articles: response.data.articles,
+        });
       })
-  }
+      .catch((error) => {
+        if (error.response.status === 426) {
+          this.setState({
+            upgradeRequired: true,
+          });
+        }
+        console.error(error);
+      });
+  };
 
   getTopHeadlines = () => {
     return this.state.articles.map((article, index) => {
@@ -39,31 +47,39 @@ class TopHeadlines extends Component {
               {article.title}
             </Link>
           </div>
-        )
+        );
       } else {
-        return
+        return;
       }
-    })
-  }
+    });
+  };
 
-  reloadHeadlines = event => {
+  reloadHeadlines = (event) => {
     this.setState(
       {
-        category: event.target.dataset.name
+        category: event.target.dataset.name,
       },
       () => {
         axios
           .get(
             `https://newsapi.org/v2/top-headlines?country=us&category=${this.state.category.toLowerCase()}&apiKey=724c68adcd604fd7bcd865950a9eddb1`
           )
-          .then(response => {
+          .then((response) => {
             this.setState({
-              articles: response.data.articles
-            })
+              articles: response.data.articles,
+            });
           })
+          .catch((error) => {
+            if (error.response.status === 426) {
+              this.setState({
+                upgradeRequired: true,
+              });
+            }
+            console.error(error);
+          });
       }
-    )
-  }
+    );
+  };
 
   render() {
     return (
@@ -97,10 +113,12 @@ class TopHeadlines extends Component {
             ? `Currently showing top headlines for ${this.state.category}`
             : ''}
         </p>
-        <div className="headlines-container">{this.getTopHeadlines()}</div>
+        <div className="headlines-container">
+          {this.state.upgradeRequired ? <CorsMessage /> : this.getTopHeadlines()}
+        </div>
       </section>
-    )
+    );
   }
 }
 
-export default TopHeadlines
+export default TopHeadlines;

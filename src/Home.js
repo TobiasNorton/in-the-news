@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { parameterize } from './utility';
 import { NEWS_OUTLETS } from './constants';
+import CorsMessage from './CorsMessage';
 
 import { Link } from 'react-router-dom';
 
@@ -117,32 +118,7 @@ class Home extends Component {
         <p className="currently-showing">
           {this.state.domain ? `Currently Showing Top Headlines from ${this.state.domain}` : ''}
         </p>
-        {this.state.upgradeRequired ? (
-          <p className="cors-message">
-            Oops! The development plan from{' '}
-            <a
-              href="https://newsapi.org/"
-              className="news-api"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              NewsAPI.org
-            </a>{' '}
-            is now only CORS enabled for localhost, so if you’d like to see this app in full you’ll
-            need to run the{' '}
-            <a
-              href="https://github.com/TobiasNorton/in-the-news"
-              className="news-api"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              repo
-            </a>{' '}
-            locally. Have a great day!
-          </p>
-        ) : (
-          this.showArticles()
-        )}
+        {this.state.upgradeRequired ? <CorsMessage /> : this.showArticles()}
       </div>
     );
   }

@@ -150,7 +150,7 @@ input {
 }
 
 .cors-message {
-  margin: 0 auto;
+  margin: auto;
   max-width: 500px;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
@@ -181,6 +181,10 @@ input {
   margin-bottom: 0;
   font-family: 'Lato', sans-serif;
   overflow: scroll;
+}
+
+.main-viewport {
+  min-height: calc(100vh - 115.5px);
 }
 
 main {
