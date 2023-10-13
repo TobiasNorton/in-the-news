@@ -1,0 +1,15 @@
+export const NEWS_OUTLETS = [
+  { name: 'The Atlantic', domain: 'TheAtlantic.com' },
+  { name: 'BBC', domain: 'BBC.com' },
+  { name: 'NBC News', domain: 'NBCNews.com' },
+  { name: 'Vice', domain: 'Vice.com' },
+  { name: 'Reuters', domain: 'Reuters.com' },
+  { name: 'IndieWire', domain: 'IndieWire.com' },
+  { name: 'Business Insider', domain: 'BusinessInsider.com' },
+  { name: 'New York Times', domain: 'NYTimes.com' },
+  { name: 'WSJ', domain: 'WSJ' },
+  { name: 'NPR', domain: 'NPR.org' },
+  { name: 'CBS News', domain: 'CBSNews.com' },
+  { name: 'Slate', domain: 'Slate.com' },
+  { name: 'USA Today', domain: 'USAToday.com' },
+];

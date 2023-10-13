@@ -37,7 +37,7 @@ code {
 
 .outlet-preference-header {
   text-align: center;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
   font-weight: bold;
   color: white;
@@ -48,7 +48,7 @@ code {
 }
 
 .currently-showing {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
@@ -114,7 +114,7 @@ nav {
   margin-left: 2rem;
   margin-right: 2rem;
   text-decoration: none;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 input {
@@ -147,6 +147,14 @@ input {
   margin: 0.5rem auto;
   padding-right: 1rem;
   background-color: hsla(185, 0%, 92%, 1);
+}
+
+.cors-message {
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
 }
 
 .thumbnail {
@@ -212,7 +220,7 @@ main {
 
 .top-headlines-header {
   text-align: center;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.4rem;
   font-weight: bold;
   color: white;
@@ -237,7 +245,7 @@ main {
   margin: 0.1rem;
   /* background-color: hsla(158, 0%, 89%, 1); */
   background-color: hsla(211, 30%, 10%, 1);
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .headline-item:hover {
@@ -247,7 +255,7 @@ main {
 .headline {
   text-decoration: none;
   color: white;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .selected-article-main {
@@ -258,6 +266,7 @@ main {
 }
 
 .selected-article-title {
+  font-family: 'Lato', sans-serif;
   margin-bottom: 0;
 }
 
@@ -288,7 +297,7 @@ main {
 .news-api {
   text-decoration: none;
   color: hsla(0, 71%, 58%, 1);
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .search-results-header {
@@ -296,13 +305,13 @@ main {
   margin: 3rem;
   font-size: 1.2rem;
   font-weight: bold;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .search-mobile {
   margin: 3rem;
   text-decoration: none;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   display: flex;
   align-items: center;
 }
@@ -312,7 +321,7 @@ main {
   font-weight: bold;
   font-size: 1.2rem;
   margin: 3rem;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .mobile-search-input {
@@ -347,7 +356,8 @@ footer {
   /* width: 97vw; */
 }
 
-footer p {
+footer p,
+footer a {
   color: white;
   margin: 0;
   font-family: 'Montserrat', sans-serif;

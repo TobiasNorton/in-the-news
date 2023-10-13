@@ -1,20 +1,20 @@
-import React, { Component } from 'react'
-import NavBar from './NavBar'
-import Footer from './Footer'
-import axios from 'axios'
-import { parameterize } from './utility'
+import React, { Component } from 'react';
+import axios from 'axios';
+import { parameterize } from './utility';
+import { NEWS_OUTLETS } from './constants';
 
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       articles: [],
       outlet: '',
-      domain: ''
-    }
+      domain: '',
+      upgradeRequired: false,
+    };
   }
 
   componentDidMount = () => {
@@ -22,12 +22,22 @@ class Home extends Component {
       .get(
         'https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=724c68adcd604fd7bcd865950a9eddb1'
       )
-      .then(response => {
-        this.setState({
-          articles: response.data.articles
-        })
+      .then((response) => {
+        if (response.data && response.data.articles) {
+          this.setState({
+            articles: response.data.articles,
+          });
+        }
       })
-  }
+      .catch((error) => {
+        if (error.response.status === 426) {
+          this.setState({
+            upgradeRequired: true,
+          });
+        }
+        console.error(error);
+      });
+  };
 
   showArticles = () => {
     return this.state.articles.map((article, index) => {
@@ -35,7 +45,7 @@ class Home extends Component {
         return (
           <div key={index} className="overview">
             <Link to={{ pathname: `/article/${parameterize(article.title)}`, state: article }}>
-              <img src={article.urlToImage} className="thumbnail" />
+              <img src={article.urlToImage} className="thumbnail" alt={article.title} />
             </Link>
             <div className="overview-textbox">
               <Link
@@ -49,100 +59,93 @@ class Home extends Component {
               <p className="caption">{article.description}</p>
             </div>
           </div>
-        )
+        );
       } else {
-        return
+        return null;
       }
-    })
-  }
+    });
+  };
 
-  getPreferredOutlet = event => {
+  getPreferredOutlet = (event) => {
     if (event.target.dataset.domain) {
       this.setState(
         {
-          domain: event.target.dataset.domain
+          domain: event.target.dataset.domain,
         },
         () =>
           axios
             .get(
               `https://newsapi.org/v2/everything?domains=${this.state.domain.toLowerCase()}&apiKey=724c68adcd604fd7bcd865950a9eddb1`
             )
-            .then(response => {
+            .then((response) => {
               this.setState({
-                articles: response.data.articles
-              })
+                articles: response.data.articles,
+              });
             })
-      )
+      );
     } else {
       axios
         .get(
           'https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=724c68adcd604fd7bcd865950a9eddb1'
         )
-        .then(response => {
+        .then((response) => {
           this.setState({
-            articles: response.data.articles
-          })
-        })
+            articles: response.data.articles,
+          });
+        });
     }
-  }
+  };
 
   render() {
     return (
       <div>
         <p className="outlet-preference-header">Have an Outlet Preference?</p>
         <div className="outlets-container">
-          <button onClick={this.getPreferredOutlet} data-domain="BBC.com">
-            BBC
-          </button>
-          <button onClick={this.getPreferredOutlet} data-domain="TheAtlantic.com">
-            The Atlantic
-          </button>
-          <button onClick={this.getPreferredOutlet} data-domain="Reuters.com">
-            Reuters
-          </button>
-          <button onClick={this.getPreferredOutlet} data-domain="NBCNews.com">
-            NBC News
-          </button>
-          <button onClick={this.getPreferredOutlet} data-domain="Vice.com">
-            Vice
-          </button>
-          <button onClick={this.getPreferredOutlet} data-domain="IndieWire.com">
-            IndieWire
-          </button>
-          <button onClick={this.getPreferredOutlet} data-domain="BusinessInsider.com">
-            Business Insider
-          </button>
-          <button onClick={this.getPreferredOutlet} data-domain="NYTimes.com">
-            New York Times
-          </button>
-          <button onClick={this.getPreferredOutlet} data-domain="WSJ.com">
-            WSJ
-          </button>
-          <button onClick={this.getPreferredOutlet} data-domain="NPR.org">
-            NPR
-          </button>
-          <button onClick={this.getPreferredOutlet} data-domain="CBSNews.com">
-            CBS News
-          </button>
-          <button onClick={this.getPreferredOutlet} data-domain="Slate.com">
-            Slate
-          </button>
-          <button onClick={this.getPreferredOutlet} data-domain="USAToday.com">
-            USA Today
-          </button>
+          {NEWS_OUTLETS.map((outlet, index) => {
+            return (
+              <button key={index} onClick={this.getPreferredOutlet} data-domain={outlet.domain}>
+                {outlet.name}
+              </button>
+            );
+          })}
           <button onClick={this.getPreferredOutlet}>All Sources</button>
         </div>
         <h1 className="main-title">
           In the News <i className="fab fa-telegram-plane" />
         </h1>
-        <p className="main-caption">You heard it here (or somewhere else) first.</p>
+        <p className="main-caption">You heard it here first. Hopefully.</p>
         <p className="currently-showing">
           {this.state.domain ? `Currently Showing Top Headlines from ${this.state.domain}` : ''}
         </p>
-        {this.showArticles()}
+        {this.state.upgradeRequired ? (
+          <p className="cors-message">
+            Oops! The development plan from{' '}
+            <a
+              href="https://newsapi.org/"
+              className="news-api"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              NewsAPI.org
+            </a>{' '}
+            is now only CORS enabled for localhost, so if you’d like to see this app in full you’ll
+            need to run the{' '}
+            <a
+              href="https://github.com/TobiasNorton/in-the-news"
+              className="news-api"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              repo
+            </a>{' '}
+            locally. Have a great day!
+          </p>
+        ) : (
+          this.showArticles()
+        )}
       </div>
-    )
+    );
   }
 }
 
-export default Home
+export default Home;
